@@ -1,3 +1,3 @@
-def lcaFunction(graph):
+def lcaFunction(graph, nodes):
 	print("This is the lca function!")
-	return graph
+	return -1
