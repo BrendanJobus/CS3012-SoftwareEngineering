@@ -1,46 +1,59 @@
-#code mostly from https://stackoverflow.com/questions/2598437/how-to-implement-a-binary-tree#
-
 class Node:
-    def __init__(self, val):
-        self.l = None
-        self.r = None
-        self.v = val
+	def __init__(self, val):
+		self.left = None
+		self.right = None
+		self.value = val
 
 class BinaryTree:
-    def __init__(self):
-        self.root = None
+	def __init__(self):
+		self.root = None
 
-    def getRoot(self):
-        return self.root
+	def add(self, val):
+		if self.root == None:
+			self.root = Node(val)
+		else:
+			self._add(val, self.root)
 
-    def add(self, val):
-        if(self.root == None):
-            self.root = Node(val)
-        else:
-            self._add(val, self.root)
+	def _add(self, val, node):
+		if val < node.value:
+			if node.left != None:
+				self._add(val, node.left)
+			else:
+				node.left = Node(val)
+		elif val > node.value:
+			if node.right != None:
+				self._add(val, node.right)
+			else:
+				node.right = Node(val)
 
-    def _add(self, val, node):
-        if(val < node.v):
-            if(node.l != None):
-                self._add(val, node.l)
-            else:
-                node.l = Node(val)
-        else:
-            if(node.r != None):
-                self._add(val, node.r)
-            else:
-                node.r = Node(val)
+	def find(self, val):
+		if self.root != None:
+			return self._find(val, self.root)
+		else:
+			return None
 
-    def find(self, val):
-        if(self.root != None):
-            return self._find(val, self.root)
-        else:
-            return None
+	def _find(self, val, node):
+		if val == node.value:
+			return node
+		elif val < node.value:
+			if node.left != None:
+				self._find(val, node.left)
+			else:
+				return None
+		elif val > node.value:
+			if node.right != None:
+				self._find(val, node.right)
+			else:
+				return None
 
-    def _find(self, val, node):
-        if(val == node.v):
-            return node
-        elif(val < node.v and node.l != None):
-            self._find(val, node.l)
-        elif(val > node.v and node.r != None):
-            self._find(val, node.r)
+	def toString(self):
+		if self.root != None:
+			return(self._printTree(self.root))
+
+	def _printTree(self, node):
+		treestring = ''
+		if node != None:
+			treestring += self._printTree(node.left)
+			treestring += str(node.value) + ' '
+			treestring += self._printTree(node.right)
+		return treestring

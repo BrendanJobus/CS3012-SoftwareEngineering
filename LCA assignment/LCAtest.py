@@ -1,7 +1,5 @@
 import unittest
-import Tree
 from Tree import BinaryTree
-import LCA
 from LCA import lcaFunction
 
 class LCATestClass(unittest.TestCase):
@@ -24,9 +22,11 @@ class LCATestClass(unittest.TestCase):
 		g.add(8)
 		g.add(7)
 		g.add(0)
-		#			  5
-		#		2			8
-		#	0		4	7
+		#			 5
+		#		  /	    \
+		#		2		 8
+		#	  /	  \	   /
+		#	0	   4 7
 		self.assertEqual(lcaFunction(g, [0, 4]), 2)
 
 if __name__ == "__main__":
