@@ -65,32 +65,38 @@ class BinaryTree:
 		moveleft = False
 		moveright = False
 		for value in nodeValues:
+
 			if self.find(value) == False:
 				return None
+			if value == self.root.value:
+				return self.root.value
+
 			if value < self.root.value:
 				moveleft = True
 			elif value > self.root.value:
 				moveright = True
 
-		if moveleft == moveright:
-			return self.root.value
-		if moveleft == True:
+		if moveleft == True and moveright == False:
 			return self._lca(self.root.left, nodeValues)
-		if moveright == True:
+		if moveright == True and moveleft == False:
 			return self._lca(self.root.right, nodeValues)
+
+		return self.root.value
 
 	def _lca(self, root, nodeValues):
 		moveleft = False
 		moveright = False
 		for value in nodeValues:
-			if value < root.value:
+			if value == root.value:
+				return root.value
+			elif value < root.value:
 				moveleft = True
 			elif value > root.value:
 				moveright = True
 
-		if moveleft == moveright:
-			return root.value
-		if moveleft == True:
+		if moveleft == True and moveright == False:
 			return self._lca(root.left, nodeValues)
-		if moveright == True:
+		if moveright == True and moveleft == False:
 			return self._lca(root.right, nodeValues)
+
+		return root.value

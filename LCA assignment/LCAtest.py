@@ -38,7 +38,7 @@ class LCATestClass(unittest.TestCase):
 		g.add(8)
 		g.add(7)
 		g.add(0)
-		self.assertEqual(g.lca([5]), 5)
+		self.assertEqual(g.lca([5, 2]), 5)
 		self.assertEqual(g.lca([7, 8]), 8)
 
 if __name__ == "__main__":
