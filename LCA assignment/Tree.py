@@ -30,39 +30,67 @@ class BinaryTree:
 		if self.root != None:
 			return self._find(val, self.root)
 		else:
-			return None
+			return False
 
 	def _find(self, val, node):
 		if val == node.value:
-			return node
+			return True
 		elif val < node.value:
 			if node.left != None:
 				self._find(val, node.left)
 			else:
-				return None
+				return False
 		elif val > node.value:
 			if node.right != None:
 				self._find(val, node.right)
 			else:
-				return None
+				return False
 
 	def toString(self):
 		if self.root != None:
-			return(self._printTree(self.root))
+			return(self._toString(self.root))
 
-	def _printTree(self, node):
+	def _toString(self, node):
 		treestring = ''
 		if node != None:
-			treestring += self._printTree(node.left)
+			treestring += self._toString(node.left)
 			treestring += str(node.value) + ' '
-			treestring += self._printTree(node.right)
+			treestring += self._toString(node.right)
 		return treestring
 
 
-	def lca(self, nodes):
-		if len(nodes) == 0:
+	def lca(self, nodeValues):
+		if len(nodeValues) == 0 or self.root == None:
 			return None
-		for node in nodes:
-			if tree.find(node) == None:
+		moveleft = False
+		moveright = False
+		for value in nodeValues:
+			if self.find(value) == False:
 				return None
-		return -1
+			if value < self.root.value:
+				moveleft = True
+			elif value > self.root.value:
+				moveright = True
+
+		if moveleft == moveright:
+			return self.root.value
+		if moveleft == True:
+			return self._lca(self.root.left, nodeValues)
+		if moveright == True:
+			return self._lca(self.root.right, nodeValues)
+
+	def _lca(self, root, nodeValues):
+		moveleft = False
+		moveright = False
+		for value in nodeValues:
+			if value < root.value:
+				moveleft = True
+			elif value > root.value:
+				moveright = True
+
+		if moveleft == moveright:
+			return root.value
+		if moveleft == True:
+			return self._lca(root.left, nodeValues)
+		if moveright == True:
+			return self._lca(root.right, nodeValues)
