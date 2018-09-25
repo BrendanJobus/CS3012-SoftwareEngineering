@@ -57,3 +57,12 @@ class BinaryTree:
 			treestring += str(node.value) + ' '
 			treestring += self._printTree(node.right)
 		return treestring
+
+
+	def lca(self, nodes):
+		if len(nodes) == 0:
+			return None
+		for node in nodes:
+			if tree.find(node) == None:
+				return None
+		return -1
