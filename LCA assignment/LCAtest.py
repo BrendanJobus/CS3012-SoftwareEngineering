@@ -1,9 +1,29 @@
 import unittest
 from Tree import BinaryTree
 
+import networkx as netx
+from DAG import lcaForDAG as lca
+
+
+class DAGTestClass(unittest.TestCase):
+	def testEmptyDAG(self):
+		g = netx.DiGraph()
+		self.assertEqual(lca(g, 1, 2), None)
+
+	def testNodesNotPresent(self):
+		g = netx.DiGraph()
+		g.add_nodes_from([1,2,3,4])
+		self.assertEqual(lca(g, 7, 8), None)
+
+	def testRegularDAG(self):
+		g = netx.DiGraph()
+		g.add_nodes_from([1,2,3,4,5,6,7])
+		g.add_edges_from([(1,2), (1,4), (2,3), (3,6), (4,5), (5,6), (6,7)])
+		self.assertEqual(lca(g, 3, 4), 1)
+
 
 class LCATestClass(unittest.TestCase):
-	def testEmptyGraph(self):
+	def testEmptyTree(self):
 		g = BinaryTree()
 		self.assertEqual(g.lca([1]), None)
 
