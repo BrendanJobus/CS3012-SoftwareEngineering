@@ -15,6 +15,12 @@ class DAGTestClass(unittest.TestCase):
 		g.add_nodes_from([1,2,3,4])
 		self.assertEqual(lca(g, 7, 8), None)
 
+	def testNotAcyclic(self):
+		g = netx.Digraph()
+		g.add_nodes_from([1,2,3])
+		g.add_edges_from([(1,2), (2,3), (3,1)])
+		self.assertEqual(lca(g, 1, 2), None)
+
 	def testRegularDAG(self):
 		g = netx.DiGraph()
 		g.add_nodes_from([1,2,3,4,5,6,7])
