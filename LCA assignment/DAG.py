@@ -65,11 +65,10 @@ def lcaForDAG(G, a, b):
     # sort each node's closure set by order of first appearance in the Euler
     # tour.
 	ancestors = {}
-	for v in dag:
-		if pairs is None or v in pairset:
-			my_ancestors = nx.dag.ancestors(dag, v)
-			my_ancestors.add(v)
-			ancestors[v] = sorted(my_ancestors, key=euler_tour_pos.get)
+	for v in pairset:
+		my_ancestors = nx.dag.ancestors(dag, v)
+		my_ancestors.add(v)
+		ancestors[v] = sorted(my_ancestors, key=euler_tour_pos.get)
 
 	def _compute_dag_lca_from_tree_values(tree_lca, dry_run):
 		"""Iterate through the in-order merge for each pair of interest.
@@ -136,22 +135,15 @@ def lcaForDAG(G, a, b):
 		if not dry_run and (super_root is None or best != super_root):
 			return best
 
-    # Generate the spanning tree lca for all pairs. This doesn't make sense to
-    # do incrementally since we are using a linear time offline algorithm for
-    # tree lca.
-	if pairs is None:
-        # We want all pairs so we'll need the entire tree.
-		tree_lca = dict(tree_all_pairs_lowest_common_ancestor(spanning_tree,
-                                                              root))
-	else:
-        # We only need the merged adjacent pairs by seeing which queries the
-        # algorithm needs then generating them in a single pass.
-		tree_lca = defaultdict(int)
-		_compute_dag_lca_from_tree_values(tree_lca, True)
 
-        # Replace the bogus default tree values with the real ones.
-		for (pair, lca) in tree_all_pairs_lowest_common_ancestor(spanning_tree, root, tree_lca):
-			tree_lca[pair] = lca
+    # We only need the merged adjacent pairs by seeing which queries the
+    # algorithm needs then generating them in a single pass.
+	tree_lca = defaultdict(int)
+	_compute_dag_lca_from_tree_values(tree_lca, True)
+
+    # Replace the bogus default tree values with the real ones.
+	for (pair, lca) in tree_all_pairs_lowest_common_ancestor(spanning_tree, root, tree_lca):
+		tree_lca[pair] = lca
 
     # All precomputations complete. Now we just need to give the user the pairs
     # they asked for, or all pairs if they want them all.
