@@ -27,6 +27,18 @@ class DAGTestClass(unittest.TestCase):
 		g.add_edges_from([(1,2), (1,4), (2,3), (3,6), (4,5), (5,6), (6,7)])
 		self.assertEqual(lca(g, 3, 4), 1)
 
+	def testNoCommonAncestor(self):
+		g = netx.DiGraph()
+		g.add_nodes_from([1,2,3,4])
+		g.add_edges_from([(1,2), (3,4)])
+		self.assertEqual(lca(g, 2, 3), None)
+
+	def testLCAisNode(self):
+		g = netx.DiGraph()
+		g.add_nodes_from([1,2,3,4])
+		g.add_edges_from([(1,2), (2,3), (3,4)])
+		self.assertEqual(lca(g, 2, 3), 2)
+
 
 class LCATestClass(unittest.TestCase):
 	def testEmptyTree(self):
