@@ -19,8 +19,13 @@ He continued working in the Mathematical Center in Amsterdam until 1962. In 1956
 
 In 1962, Dijkstra was appointed Professor of Mathematics at the Eindhoven University of Technology. Even though there was no Computer Science department at the University, and some colleagues actually had reservations about it, he set up a group of computer scientists within the Mathematics department. This is when he began writing the manuscripts known as *EWDs* (his initials). Usually no longer than 15 pages, the articles were written over a period of 40 years, each numbered consecutively. They contained letters, speeches and reports of his travels discussing computer science and mathematics. 1318 total EWDs were written, almost all of which with his signature fountain pen.
 
-Later, in 1972, he received the ACM Turing Award (regarded as the most prestigious award in Computer Science).
+Later, in 1972, he received the ACM Turing Award (regarded as the most prestigious award in Computer Science). The address he gave when accepting the award, *The Humble Programmer*, is an insightful collection of thoughts about the future of computer science, many of which have since come true.
+
+The following year, Dijkstra joined Burroughs Corporation, serving as its only Research Fellow, in its smallest research facility: his study at home. As part of his duties he was required to travel to the United States and visit the other research centers a number of times a year, and as he was already quite famous at this stage, he received a multitude of invitations to lecture around the world. Subsequently, he would spend only Tuesdays at the University of Eindhoven, and he was made Professor Extraordinarius there.
+
+Finally, Dijkstra was offered the Schlumberger Centennial Chair in the Computer Science Department at the University of Texas, Austin, in 1984. He accepted, and stayed there until his retirement in 1999.
 
 ### Influence and Contribution
+
 
 ### Later Life
