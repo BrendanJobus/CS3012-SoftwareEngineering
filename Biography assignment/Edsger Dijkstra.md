@@ -17,6 +17,10 @@ In 1952, Dijkstra accepted a part-time position as a programmer at the *Mathemat
 
 He continued working in the Mathematical Center in Amsterdam until 1962. In 1956, the same year he graduated from the University of Leiden, he gave a public demonstration of the new computer the Mathematical Center had just built. This is when he designed a program to find the shortest route between to cities in the Netherlands. As there was no journal dedicated to automatic computing, it wasn't until 1959 that he published his shortest path algorithm in *A Note on Two Problems in Connexion with Graphs*. The University of Amsterdam awarded him his Ph.D. that same year for his thesis *Communication with an Automatic Computer*.
 
+In 1962, Dijkstra was appointed Professor of Mathematics at the Eindhoven University of Technology. Even though there was no Computer Science department at the University, and some colleagues actually had reservations about it, he set up a group of computer scientists within the Mathematics department. This is when he began writing the manuscripts known as *EWDs* (his initials). Usually no longer than 15 pages, the articles were written over a period of 40 years, each numbered consecutively. They contained letters, speeches and reports of his travels discussing computer science and mathematics. 1318 total EWDs were written, almost all of which with his signature fountain pen.
+
+Later, in 1972, he received the ACM Turing Award (regarded as the most prestigious award in Computer Science).
+
 ### Influence and Contribution
 
 ### Later Life
