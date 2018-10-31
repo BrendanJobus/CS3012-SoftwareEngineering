@@ -23,9 +23,10 @@ Later, in 1972, he received the ACM Turing Award (regarded as the most prestigio
 
 The following year, Dijkstra joined Burroughs Corporation, serving as its only Research Fellow, in its smallest research facility: his study at home. As part of his duties he was required to travel to the United States and visit the other research centers a number of times a year, and as he was already quite famous at this stage, he received a multitude of invitations to lecture around the world. Subsequently, he would spend only Tuesdays at the University of Eindhoven, and he was made Professor Extraordinarius there.
 
-Finally, Dijkstra was offered the Schlumberger Centennial Chair in the Computer Science Department at the University of Texas, Austin, in 1984. He accepted, and stayed there until his retirement in 1999.
+Finally, Dijkstra was offered the Schlumberger Centennial Chair in the Computer Science Department at the University of Texas, Austin, in 1984. He graciously accepted, and stayed there until his retirement in 1999.
 
 ### Influence and Contribution
 
 
 ### Later Life
+Dr. Edsger Wyde Dijkstra died on the 6th of August, 2002, after a long battle with cancer. He had three children with his wife Maria Debets. He was awarded the Dijkstra Prize shortly before his death, which had originally been called the *PODC Influential-Paper Award*, but was renamed in his honour in 2003.
