@@ -5,7 +5,7 @@ A short biography by James Tait
 
 Widely known for his Shortest Path algorithm, Dr. Edsger Dijkstra was an exceptionally intelligent and influential computer scientist. He has made contributions to most all areas of the discipline, specifically structured programming and software architecture. Known for his somewhat eccentric character, he has lots of great quotes to his name too:
 
->The art of programming is the art of organizing complexity, of mastering multitude and avoiding its bastard chaos as effectively as possible. -
+>The art of programming is the art of organizing complexity, of mastering multitude and avoiding its bastard chaos as effectively as possible.
 
 ### Early Life
 Dijkstra was born on the 11th of May, 1930. He was the third child of four had by his parents Douwe Wybe Dijkstra and Brechtje Cornelia Kluijver. In school, he had hopes of studying law and representing the Netherlands in the European Union. However this changed after finishing his final exams, and getting the maximum mark in Maths, Physics, Chemistry, and Biology. Both his teachers and his parents persuaded him to pursue a career in science after this clear demonstration of talent and skill. Hence, his focus shifted to theoretical physics. He studied it at the University of Leiden until 1956, during which time his father told him of a three week programming course in Cambridge. He figured programming was a good skill to have as a theoretical physicist and so in 1951, he enrolled and completed the course. After the fact he said:
@@ -30,11 +30,13 @@ The number of contributions Dijkstra has made to the field of Computer Science i
 
 His book *Structured Programming*, coauthored with C.A.R. Hoare and Ole-Johan Dahl, lay the foundations for the structured programming movement. Without this, the increasingly gigantic and complex software projects that have since been undertaken would be practically impossible. His ideas about software design and development effectively birthed the software engineering profession. Structured programming is about separating a program into logical subsections, each with one entry and exit point (i.e. functions). The point is to make programs both easier to understand and easier to modify. It also means reusing the subsections in different programs is easier. During the 70s and 80s, this programming methodology heavily influenced the creation of languages like Pascal, C, and Ada.
 
-Shortest Path algorithm
+Dijkstra's iconic Shortest Path algorithm has been applied to so many problems throughout the years, the OSPF routing protocol, airplane paths between airports, and more. It's no wonder the algorithm is responsible for much of his fame. In an interview with Philip L. Frana, 2001, he had this to say:
 
-Concurrent programming + operating systems
+>One morning I was shopping in Amsterdam with my young fiancée, and tired, we sat down on the café terrace to drink a cup of coffee and I was just thinking about whether I could do this, and I then designed the algorithm for the shortest path. As I said, it was a twenty-minute invention.
 
-ALGOL compiler, recursion and stack, semaphores, (separation of concerns)
+When working on concurrent programming, Dijkstra identified the deadlock problem, and invented semaphores. Lots of multitasking programs and systems like operating systems heavily rely on semaphores and the idea of mutual exclusion. Clearly, many of the software engineering projects that have been completed since would look very different without these contributions.
+
+Dijkstra was also part of the international team that designed the ALGOL 60 language. The introduction of recursion was due to him, and in doing so the introduction of what he called a *stack*. Now stack is universal computer science jargon and it's implement in most all languages. By 1960, Dijkstra and his colleague Jaap Zonneveld had completed the first ALGOL 60 compiler, which wasn't a feat repeated for another year.
 
 ### Later Life
 Dr. Edsger Wyde Dijkstra died on the 6th of August, 2002, after a long battle with cancer. He had three children with his wife Maria Debets. He was awarded the Dijkstra Prize shortly before his death, which had originally been called the *PODC Influential-Paper Award*, but was renamed in his honour in 2003.
