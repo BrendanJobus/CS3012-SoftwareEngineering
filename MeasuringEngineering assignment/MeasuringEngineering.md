@@ -52,10 +52,11 @@ Studies have shown that taking on too much work can make you less productive. Ka
 
 Test Driven Development (TDD) is wholly different algorithm. Put simply, you start development by making tests (that fail), you then 'hack' together some code in any which way that you can such that the tests pass, and *then* you refactor your code to be more efficient/elegant/structured, all the while making sure the tests still pass. It has been found to increase code stability, but claims have also been made that it doesn't help at all. I think its effectiveness depends greatly on the context of the project it is being applied to. The Zorro paper suggests that the simple description of the algorithm (stated above) doesn't describe it fully, and it needs to be adapted to the context in order to increase stability and productivity as much as people claim it can.
 
-Unfortunately, properly ascertaining how much value you gain from practicing these algorithms is very difficult; there are lots of variables that can skew your observations in many directions. It can also take a long time before the effects of such systems show; even if a perfect software engineering algorithm has already been laid out, years could pass before we actually realize it.
+Unfortunately, properly ascertaining how much value you gain from practicing these algorithms is very difficult; there are lots of variables that can skew your observations in many directions. It can also take a long time before the effects of such systems show; even if a perfect software engineering algorithm has already been laid out, years could pass before we actually realise it.
 
 ### Ethics Concerns
-Data collection always raises ethics concerns, people can find it invasive, breaches their privacy. The Hawthorne Effect - is the data more authentic when you don't disclose that you're collecting it, and is it ethical to not do so? Social and political barriers to adoption of the measuring techniques can lead to measurement dysfunction and wholly undermine the value of the analytic.
+Data collection always raises ethics concerns; the majority of people find it invasive, and that it breaches their privacy. In philosophy, the Hawthorne Effect states that a subject's behaviour can change due to nothing more than the fact that some aspect of the subject's behaviour is being measured. This raises a few questions; is the data more authentic when you don't disclose that you're collecting it?, and is it ethical not to disclose that you're collecting it? So long as all subjects of the analysis are made aware that they are being analysed, and they subsequently consent, I believe that analysis is ethical. The 'quality' of the data collected may or may not suffer for it, but in order to remain ethical that bullet must be bitten.
+
 
 #### Sources
 *   [Searching under the Streetlight for Useful Software Analytics](http://www.citeulike.org/group/3370/article/12458067)
@@ -63,3 +64,4 @@ Data collection always raises ethics concerns, people can find it invasive, brea
 *   [The Myth of Developer Productivity](https://dev9.com/blog-posts/2015/1/the-myth-of-developer-productivity)
 *   [Jira Official Website](https://www.atlassian.com/software/jira)
 *   [GitPrime Official Website](https://www.gitprime.com/product/)
+*   [Agile Development](https://en.wikipedia.org/wiki/Agile_software_development)
