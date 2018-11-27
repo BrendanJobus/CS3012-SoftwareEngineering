@@ -1,10 +1,16 @@
-from github import Github
+from github import Github, BadCredentialsException
 import getpass
+import sys
 
 usr = input("Username: ")
 pwd = getpass.getpass()
 
 g = Github(usr, pwd)
+try:
+	g.get_user().login
+except BadCredentialsException:
+	print("Invalid username or password.")
+	sys.exit()
 
 print("")
 print("You have the following repos:")
