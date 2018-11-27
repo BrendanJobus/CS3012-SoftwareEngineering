@@ -16,15 +16,24 @@ def login():
         usr = request.form['username']
         pwd = request.form['password']
 
-		github = Github(usr, pwd)
-		try:
-			github.get_user().login
+        github = Github(usr, pwd)
+        try:
+            id = github.get_user().name
 
-			session.clear()
-            session['user_id'] = user['id']
+            session.clear()
+            session['user_id'] = id
             return redirect(url_for('index'))
 
-		except BadCredentialsException:
-        	flash("Invalid username or password.")
+        except BadCredentialsException:
+            flash("Invalid username or password.")
 
     return render_template('auth/login.html')
+
+@bp.before_app_request
+def load_logged_in_user():
+    user_id = session.get('user_id')
+
+    if user_id is None:
+        g.user = None
+    else:
+        g.user = Github().get_user(user_id)

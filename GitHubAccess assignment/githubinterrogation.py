@@ -7,7 +7,7 @@ pwd = getpass.getpass()
 
 g = Github(usr, pwd)
 try:
-	g.get_user().login
+	print(g.get_user().id)
 except BadCredentialsException:
 	print("Invalid username or password.")
 	sys.exit()
@@ -15,7 +15,7 @@ except BadCredentialsException:
 print("")
 print("You have the following repos:")
 
-repos = g.get_user().get_repos()
+repos = Github().get_user(usr).get_repos()
 for repo in repos:
 	print(repo.name)
 
