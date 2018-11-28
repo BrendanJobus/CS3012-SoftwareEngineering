@@ -8,7 +8,7 @@ from flask.cli import with_appcontext
 
 def get_db():
     if 'db' not in g:
-        g.db = MongoClient().github_data
+        g.db = MongoClient()
 
     return g.db
 
@@ -17,8 +17,8 @@ def init_db():
     users = Github().get_users()
     with click.progressbar(users) as bar:
         for u in bar:
-            db.users.insert_one(
-				{'name':u.name, 'followerurl':u.followersurl}
+            db.github_data.users.insert_one(
+				{'name':u.login, 'followerurl':u.followersurl}
 			)
 
 
