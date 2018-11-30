@@ -12,21 +12,23 @@ def get_db():
 
     return g.db
 
-def init_db():
+def init_db(username, password):
     db = get_db()
-    users = Github().get_users()
-    with click.progressbar(users) as bar:
-        for u in bar:
-            db.github_data.users.insert_one(
-				{'name':u.login, 'followerurl':u.followersurl}
-			)
+    user = Github(username, password).get_user(username)
+    fs = user.get_followers()
+    followers = []
+    for f in fs:
+        followers.append(f.login)
+    db.github_data.users.insert_one({'username':user.login, 'followers':followers})
 
 
 @click.command('init-db')
+@click.argument('username')
+@click.password_option()
 @with_appcontext
-def init_db_command():
+def init_db_command(username, password):
     """Download github user data and store in local mongodb."""
-    init_db()
+    init_db(username, password)
     click.echo('Initialized the database.')
 
 def close_db(e=None):
