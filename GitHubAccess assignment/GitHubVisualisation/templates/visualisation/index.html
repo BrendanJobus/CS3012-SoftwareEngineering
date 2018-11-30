@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Your followers (and theirs, (and theirs, (and so on...))){% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <div id="graph">
+  </div>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script>
+	  var vis = d3.select("#graph")
+	  	    .append("svg")
+	  .attr("width", "clientwidth").attr("height", "clientHeight");
+
+	  var nodes = [
+	      {x: 400, y: 80}
+	    ]
+
+	  vis.selectAll("circle.nodes")
+	     .data(nodes)
+	     .enter()
+	     .append("svg:circle")
+	     .attr("cx", function(d) { return d.x; })
+	     .attr("cy", function(d) { return d.y; })
+	     .attr("r", "10px")
+	     .attr("fill", "black")
+  </script>
+{% endblock %}
