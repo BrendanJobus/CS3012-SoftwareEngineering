@@ -12,14 +12,20 @@ def get_db():
 
     return g.db
 
+
 def init_db(username, password):
     db = get_db()
-    user = Github(username, password).get_user(username)
-    fs = user.get_followers()
-    followers = []
-    for f in fs:
-        followers.append(f.login)
-    db.github_data.users.insert_one({'username':user.login, 'followers':followers})
+    if db.github_data.users.find_one({'username':username}) is None:
+        user = Github(username, password).get_user(username)
+        fs = user.get_followers()
+        followers = []
+        for f in fs:
+            followers.append({'name':f.login, 'parent':user.login})
+        db.github_data.users.insert_one({
+    		'name':user.login,
+    		'children':followers,
+    		'size':len(followers)
+    	})
 
 
 @click.command('init-db')
