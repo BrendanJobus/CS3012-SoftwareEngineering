@@ -88,7 +88,7 @@ function tick() {
 
 // Color leaf nodes orange, and packages white or blue.
 function color(d) {
-  return d._children ? "#5744B5" : d.children ? "#c6dbef" : "#E45693";
+  return !d.parent ? "#00FF00" : d._children ? "#5744B5" : d.children ? "#c6dbef" : "#E45693";
 }
 
 // Toggle children on click.
