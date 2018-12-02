@@ -12,20 +12,31 @@ def get_db():
 
     return g.db
 
+def generateTree(github, username, level, namesSoFar):
+    user = github.get_user(username)
+    fs = user.get_followers()
+    tree = []
+    for f in fs:
+        fname = f.login # save on rate limit
+        if fname not in namesSoFar:
+            namesSoFar.append(fname)
+            if level > 1 or f.get_followers().totalCount is 0:
+                tree.append({'name':fname, 'parent':user.login})
+            else:
+                tree.append({'name':fname, 'parent':user.login, 'children':generateTree(github, fname, level+1, namesSoFar)})
+    return tree
+
 
 def init_db(username, password):
     db = get_db()
-    if db.github_data.users.find_one({'username':username}) is None:
-        user = Github(username, password).get_user(username)
-        fs = user.get_followers()
-        followers = []
-        for f in fs:
-            followers.append({'name':f.login, 'parent':user.login})
-        db.github_data.users.insert_one({
-    		'name':user.login,
-    		'children':followers,
-    		'size':len(followers)
-    	})
+    username = Github().get_user(username).login	# takes care of any case sensitivities in db
+    if db.github_data.trees.find_one({'name':username}) is None:
+        authGithub = Github(username, password)
+        tree = generateTree(authGithub, username, 0, [username])
+        db.github_data.trees.insert_one({
+            'name':username,
+            'children':tree
+        })
 
 
 @click.command('init-db')

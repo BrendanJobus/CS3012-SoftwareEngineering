@@ -11,5 +11,5 @@ bp = Blueprint('visualisation', __name__)
 @bp.route('/')
 def index():
     db = get_db()
-    user = db.github_data.users.find_one({'name':g.user.login}, {'_id':0})
+    user = db.github_data.trees.find_one({'name':g.user.login}, {'_id':0})
     return render_template('visualisation/index.html', user=user)
